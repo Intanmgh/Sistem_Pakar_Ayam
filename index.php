@@ -21,7 +21,7 @@ if (!$conn) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" href="gambar/admin/favicon.png">
+    <link rel="icon" href="aset\banner\logopakarayam.png">
     <link href="css/font-awesome-4.2.0/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/owl-carousel/owl.carousel.css" rel="stylesheet" media="all">
     <link href="css/owl-carousel/owl.theme.css" rel="stylesheet" media="all">
