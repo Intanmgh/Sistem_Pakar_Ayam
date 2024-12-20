@@ -13,7 +13,20 @@
     }
   .small-box .inner p {
         font-size: 22px; 
-      }
+  }
+  .bg-pink {
+      background: linear-gradient(135deg, #ff69b4, #ffb6c1); /* Gradasi pink */
+      color: #fff; /* Teks berwarna putih */
+  }
+  .bg-purple {
+      background: linear-gradient(135deg, #800080, #dda0dd); /* Gradasi ungu */
+      color: #fff; /* Teks berwarna putih */
+  }
+  .bg-pastel-red {
+      background: linear-gradient(135deg, #ff6f61, #ffa07a); /* Gradasi merah pastel */
+      color: #fff; /* Teks berwarna putih */
+  }
+  
 
 </style>
 <div>
@@ -22,7 +35,7 @@
     $dtgejala=mysqli_fetch_assoc($htgejala); ?>
     <div class='row'>
           <div class='col-lg-4 col-xs-8'>
-            <div class='small-box bg-aqua'>
+            <div class='small-box bg-pink'>
               <div class='inner'>
                 <h3> <?php echo $dtgejala["total"]; ?></h3>
                 <p>Total Gejala</p>
@@ -37,7 +50,7 @@
     $htpenyakit=mysqli_query($conn,"SELECT count(*) as total from penyakit");
       $dtpenyakit=mysqli_fetch_assoc($htpenyakit); ?>
           <div class="col-lg-4 col-xs-8">
-            <div class="small-box bg-green">
+            <div class="small-box bg-purple">
               <div class="inner">
                 <h3> <?php echo $dtpenyakit["total"]; ?></h3>
                 <p>Total Penyakit</p>
@@ -52,7 +65,7 @@
     $htpengetahuan=mysqli_query($conn,"SELECT count(*) as total from basis_pengetahuan");
       $dtpengetahuan=mysqli_fetch_assoc($htpengetahuan); ?>
           <div class="col-lg-4 col-xs-8">
-            <div class="small-box bg-yellow">
+            <div class="small-box bg-pastel-red">
               <div class="inner">
                 <h3><?php echo $dtpengetahuan["total"]; ?></h3>
                 <p>Total Pengetahuan</p>
@@ -72,12 +85,12 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                    <img src="aset/banner/1.jpg" alt="First slide">
+                    <img src="aset/banner/jago 1.png" alt="First slide">
                     <div class="carousel-caption">
                     </div>
                   </div>
                   <div class="item">
-                    <img src="aset/banner/2.jpg" alt="Second slide">
+                    <img src="aset/banner/jago 2.png" alt="Second slide">
                     <div class="carousel-caption">
                     </div>
                   </div>

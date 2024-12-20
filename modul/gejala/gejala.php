@@ -46,7 +46,7 @@ switch ($act) {
         echo "<form method='POST' action='?module=gejala' name='text_form' onsubmit='return Blank_TextField_Validator_Cari()'>
                 <br><br><table class='table table-bordered'>
                 <input type='text' name='keyword' style='margin-left: 10px;' placeholder='Ketik dan tekan cari...' class='form-control' value='{$keyword}' /> 
-                <input class='btn bg-olive margin' type='submit' value='Cari' name='Go'></td></tr>
+                <input class='btn bg-olive margin' type='submit' value='Cari' name='Go' style='background-color: #ce0606 !important; border-color: #b00505 !important; color: #fff !important;'></td></tr>
                 </table></form>";
         
         $baris = mysqli_num_rows($tampil);
@@ -64,7 +64,6 @@ switch ($act) {
                             <tr>
                                 <th>No</th>
                                 <th>Nama Gejala</th>
-                                <th width='21%'>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>"; 
@@ -76,14 +75,6 @@ switch ($act) {
                     echo "<tr class='{$warna}'>
                             <td align='center'>{$no}</td>
                             <td>{$r['nama_gejala']}</td>
-                            <td align='center'>
-                                <a type='button' class='btn btn-success margin' href='gejala/editgejala/{$r['kode_gejala']}'>
-                                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i> Ubah
-                                </a> &nbsp;
-                                <a type='button' class='btn btn-danger margin' href=\"JavaScript: confirmIt('Anda yakin akan menghapusnya ?','{$aksi}?module=gejala&act=hapus&id={$r['kode_gejala']}','','','','u','n','Self','Self')\">
-                                    <i class='fa fa-trash-o' aria-hidden='true'></i> Hapus
-                                </a>
-                            </td>
                           </tr>";
                     $no++;
                     $counter++;

@@ -95,7 +95,7 @@ switch ($act) {
 				)");
 
       echo "<div class='content'>
-      <h2 class='text text-primary'>Hasil Diagnosis &nbsp;&nbsp;<button id='print' onClick='window.print();' data-toggle='tooltip' data-placement='right' title='Klik tombol ini untuk mencetak hasil diagnosa'><i class='fa fa-print'></i> Cetak</button> </h2>
+      <h2 class='text text-dark'>Hasil Diagnosis &nbsp;&nbsp;<button id='print' onClick='window.print();' data-toggle='tooltip' data-placement='right' title='Klik tombol ini untuk mencetak hasil diagnosa' style='background-color: #ce0606; border-color: #b00505; color: white;'><i class='fa fa-print'></i> Cetak</button> </h2>
       <hr><table class='table table-bordered table-striped diagnosa'> 
           <th width=8%>No</th>
           <th width=10%>Kode</th>
@@ -143,11 +143,11 @@ switch ($act) {
       }
       echo "</div></div></div>";
     } else {
-      echo "<h2 class='text text-primary'>Diagnosa Penyakit</h2><hr>
-      <div class='alert alert-success alert-dismissible'>
+      echo "<h2 class='text text-dark'>Diagnosa Penyakit</h2><hr>
+      <div class='alert alert-success alert-dismissible' style='background-color: #4DA1A9 !important; border-color: #72a3d3; color: #000;'>
         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
         <h4><i class='icon fa fa-exclamation-triangle'></i>Perhatian !</h4>
-        Silahkan memilih gejala sesuai dengan kondisi ayam anda, anda dapat memilih kepastian kondisi ayam dari pasti tidak sampai pasti ya, jika sudah tekan tombol proses (<i class='fa fa-search-plus'></i>) di bawah untuk melihat hasil.
+        Silahkan memilih gejala sesuai dengan kondisi ayam anda, anda dapat memilih kepastian kondisi ayam dari pasti tidak sampai pasti ya, jika sudah tekan tombol proses  (<i class='fa fa-search-plus'></i>)  di bawah untuk melihat hasil.
       </div>
       <form name=text_form method=POST action='diagnosa' >
         <table class='table table-bordered table-striped konsultasi'>
@@ -188,7 +188,7 @@ switch ($act) {
         <?php
         echo "</tr>";
       }
-      echo "<input class='btn btn-success' type=submit name=submit value='Proses Diagnosa' /> <br></br>
+      echo "<input class='btn btn-success' type=submit name=submit value='Proses Diagnosa' style='background-color: #ce0606; border-color: #b00505; color: #fff;'/> <br></br>
       
     </form>";
    

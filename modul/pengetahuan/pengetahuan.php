@@ -4,22 +4,17 @@ $aksi = "modul/pengetahuan/aksi_pengetahuan.php";
 $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 $limit = 15;
 
-// Cek parameter 'act' untuk menentukan aksi yang akan dilakukan
 $act = isset($_GET['act']) ? $_GET['act'] : '';
 
 switch ($act) {
-    // Default: Menampilkan basis pengetahuan
     default:
-        // Form pencarian
         echo "<form method='POST' action='?module=pengetahuan' name='text_form' onsubmit='return Blank_TextField_Validator_Cari()'>
             <br><br><table class='table table-bordered'>
             <input type='text' name='keyword' style='margin-left: 10px;' placeholder='Ketik dan tekan cari...' class='form-control' value='".(isset($_POST['keyword']) ? $_POST['keyword'] : '')."' /> 
-            <input class='btn bg-olive margin' type='submit' value='   Cari   ' name='Go'></td> </tr>
+            <input class='btn bg-olive margin' type='submit' value='   Cari   ' name='Go' style='background-color: #ce0606 !important; border-color: #b00505 !important; color: #fff !important;'></td> </tr>
             </table></form>";
 
-        // Jika tombol cari ditekan
         if (isset($_POST['Go'])) {
-            // Query untuk mencari berdasarkan nama penyakit
             $numrows = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM basis_pengetahuan b, penyakit p WHERE b.kode_penyakit = p.kode_penyakit AND p.nama_penyakit LIKE '%".$_POST['keyword']."%'"));
             if ($numrows > 0) {
                 echo "<div class='alert alert-success alert-dismissible'>
@@ -39,7 +34,6 @@ switch ($act) {
                       </thead>
                       <tbody>";
 
-                // Query untuk mengambil data berdasarkan pencarian
                 $hasil = mysqli_query($conn, "SELECT b.kode_pengetahuan, p.nama_penyakit, g.nama_gejala, b.mb, b.md 
                                              FROM basis_pengetahuan b
                                              JOIN penyakit p ON b.kode_penyakit = p.kode_penyakit
@@ -48,11 +42,9 @@ switch ($act) {
                 $no = 1;
                 $counter = 1;
 
-                // Menampilkan hasil pencarian
                 while ($r = mysqli_fetch_array($hasil)) {
                     $warna = ($counter % 2 == 0) ? "dark" : "light";
 
-                    // Debugging untuk memastikan data ada
                     if (!isset($r['nama_penyakit']) || !isset($r['nama_gejala'])) {
                         echo "Data tidak ditemukan!";
                         continue;

@@ -34,10 +34,15 @@ if (!$conn) {
     <link href="aset/AdminLTE.css" rel="stylesheet">
     <link href="aset/Ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="aset/skins/_all-skins.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="aset/jQuery-2.js"></script>
     <script src="aset/bootstrap.js"></script>
 
     <style>
+        .body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
         .content-wrapper {
             margin-left: 0;
             width: 100%;
@@ -45,7 +50,7 @@ if (!$conn) {
         }
 
         nav{
-            background-color:#2C3E50 !important;
+            background-color:#ce0606 !important;
         }
 
         .navbar a, .navbar-custom-menu a {
@@ -59,7 +64,7 @@ if (!$conn) {
 <body id="pakarayam" class="hold-transition skin-purple-light sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="" class="logo" style="background-color:#2C3E50 !important;">
+            <a href="" class="logo" style="background-color:#ce0606 !important;">
                 <h3>PAKAR AYAM</h3>
             </a>
             <nav class="navbar navbar-static-top" role="navigation">

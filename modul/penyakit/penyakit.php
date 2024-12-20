@@ -1,18 +1,14 @@
 <?php
 include "config/fungsi_alert.php";
 
-// Define the $aksi variable to avoid undefined variable warning
 $aksi = "modul/penyakit/aksi_penyakit.php";
 
-// Handle 'act' and 'offset' parameters
 $act = $_GET['act'] ?? '';  
 $offset = $_GET['offset'] ?? 0;  
 
-// Ensure 'keyword' is set, default to empty string if not
 $keyword = $_POST['keyword'] ?? '';
 
 switch ($act) {
-    // Default: Tampil penyakit
     default:
         $limit = 15;
         $tampil = mysqli_query($conn, "SELECT * FROM penyakit ORDER BY kode_penyakit");
@@ -23,7 +19,7 @@ switch ($act) {
                     <tr>
                         <td>
                             <input type='text' name='keyword' style='margin-left: 10px;' placeholder='Ketik dan tekan cari...' class='form-control' value='$keyword' /> 
-                            <input class='btn bg-olive margin' type='submit' value='   Cari   ' name='Go'>
+                            <input class='btn bg-olive margin' type='submit' value='   Cari   ' name='Go' style='background-color: #ce0606 !important; border-color: #b00505 !important; color: #fff !important;'>
                         </td>
                     </tr>
                 </table>
@@ -32,7 +28,6 @@ switch ($act) {
         $baris = mysqli_num_rows($tampil);
 
         if (isset($_POST['Go'])) {
-            // Search functionality
             $keyword = mysqli_real_escape_string($conn, $_POST['keyword']); 
             $numrows = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM penyakit WHERE nama_penyakit LIKE '%$keyword%'"));
             if ($numrows > 0) {
@@ -47,7 +42,6 @@ switch ($act) {
                                 <th>Nama Penyakit</th>
                                 <th>Detail Penyakit</th>
                                 <th>Saran Penyakit</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>";
@@ -60,10 +54,6 @@ switch ($act) {
                             <td>$r[nama_penyakit]</td>
                             <td>$r[det_penyakit]</td>
                             <td>$r[srn_penyakit]</td>
-                            <td align='center'>
-                                <a type='button' class='btn btn-block btn-success' href='penyakit/editpenyakit/$r[kode_penyakit]'><i class='fa fa-pencil-square-o'></i> Ubah</a> &nbsp;
-                                <a type='button' class='btn btn-block btn-danger' href=\"JavaScript: confirmIt('Anda yakin akan menghapusnya ?','$aksi?module=penyakit&act=hapus&id=$r[kode_penyakit]')\"><i class='fa fa-trash-o'></i> Hapus</a>
-                            </td>
                         </tr>";
                     $no++;
                 }
